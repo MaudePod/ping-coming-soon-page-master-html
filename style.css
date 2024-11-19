@@ -201,7 +201,7 @@ svg[class="facebook-icon"]:hover {
     }
 
     button[id="notify-me"] {
-        width: 83cqw;
+        width: 90cqw;
     }
 
     form[class="contact"]:has(input[id="email"]:user-invalid) label[for="email"]::after {
