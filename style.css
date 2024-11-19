@@ -1,0 +1,211 @@
+:root {
+    /*Primary */
+    --blue: hsl(223, 87%, 63%);
+    /*Secondary*/
+    --pale-blue: hsl(223, 100%, 88%);
+    --light-red: hsl(354, 100%, 66%);
+    /*Neutral*/
+    --gray: hsl(0, 0%, 59%);
+    --very-dark-blue: hsl(209, 100%, 66%);
+}
+
+@font-face {
+    font-family: 'Libre Franklin';
+    src: url(./fonts/Libre_Franklin/LibreFranklin-VariableFont_wght.ttf);
+}
+
+body {
+    display: grid;
+    height: 100svh;
+    width: 100svw;
+    container: body / inline-size;
+    justify-items: center;
+    margin: 0;
+    font-family: 'Libre Franklin';
+}
+
+main {
+    display: grid;
+    place-items: center;
+    height: 90cqh;
+    width: 40cqw;
+    max-width: 800px;
+    container: main / inline-size;
+    text-align: center;
+}
+
+section[class="card"] {
+    display: grid;
+}
+
+section[class="card-header-image"] {
+    display: grid;
+    place-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+section[class="card-header"] {
+    font-size: xx-large;
+}
+
+section[class="card-header"] span {
+    color: var(--gray);
+}
+
+section[class="card-header"] span[class="soon"] {
+    color: black;
+    font-weight: 700;
+}
+
+form[class="contact"] {
+    display: grid;
+    place-self: center;
+}
+
+form[class="contact"]:has(input[id="email"]:user-invalid) label[for="email"]::after {
+    content: "Please provide a valid email address";
+    color: var(--light-red);
+    text-align: left;
+    margin-left: 30px;
+    font-style: italic;
+}
+
+form[class="contact"]:has(input[id="email"]:user-invalid) input[id="email"] {
+    border-color: var(--light-red);
+}
+
+input[id="email"]:focus-within {
+    outline: 0px;
+}
+
+label[for="email"] {
+    display: grid;
+}
+
+input[id="email"] {
+    border-radius: 30px;
+    height: 30px;
+    width: 80cqw;
+    border: 1px var(--pale-blue) solid;
+    outline: transparent;
+    padding: 0 5cqw 0 5cqw;
+}
+
+button[id="notify-me"] {
+    border-radius: 30px;
+    background: var(--blue);
+    color: white;
+    border: transparent;
+    height: 40px;
+    cursor: pointer;
+    box-shadow: 1px 2px 3px 2px var(--pale-blue);
+}
+
+button[id="notify-me"]:hover {
+    filter: brightness(1.5);
+}
+
+section[class="dashboard"] img {
+    height: 100%;
+    width: 100%;
+}
+
+section[class="social"] {
+    height: 100%;
+}
+
+section[class="social"] {
+    width: 100%;
+    height: 100%;
+}
+
+section[class="social"] {
+    display: grid;
+    grid-template-columns: repeat(3, 45px);
+    place-content: center;
+}
+
+section[class="social"] span {
+    display: grid;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    place-items: center;
+}
+
+section[class="copyright"] {
+    margin-top: 25px;
+}
+
+div[class="attribution"] {
+    position: absolute;
+    bottom: 5px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+}
+
+svg[id="svgs"] {
+    display: none;
+}
+
+svg[class="twitter-icon"],
+svg[class="instagram-icon"],
+svg[class="facebook-icon"] {
+    border-radius: 50%;
+    padding: 5px;
+    fill: var(--blue);
+    border: 1px solid var(--blue);
+}
+
+svg[class="twitter-icon"]:hover,
+svg[class="instagram-icon"]:hover,
+svg[class="facebook-icon"]:hover {
+    fill: white;
+    background: var(--blue);
+}
+
+@container body (inline-size < 800px) {
+    main {
+        width: 90cqw;
+        max-width: unset;
+    }
+}
+
+@container main (inline-size < 90cqw) {
+    section[class="card"] {
+        height: 70cqh;
+    }
+
+    form[class="contact"] {
+        grid-template-columns: 70fr 30fr;
+        column-gap: 10px;
+    }
+
+
+    button[id="notify-me"] {
+        width: 150px;
+        box-shadow: 1px 2px 3px 2px var(--pale-blue);
+    }
+}
+
+@container main (inline-size >=90cqw) {
+    section[class="card"] {
+        height: 100%;
+    }
+
+    form[class="contact"] {
+        grid-template-columns: 1fr;
+        row-gap: 10px;
+    }
+
+    button[id="notify-me"] {
+        width: 83cqw;
+    }
+
+    form[class="contact"]:has(input[id="email"]:user-invalid) label[for="email"]::after {
+        text-align: center;
+        margin-left: 0px;
+    }
+}
