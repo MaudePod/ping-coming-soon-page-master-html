@@ -1,4 +1,3 @@
-ping-coming-soon-page-master
 [View Solution](https://maudepod.github.io/ping-coming-soon-page-master-html/)
 
 # Frontend Mentor - Ping coming soon page
