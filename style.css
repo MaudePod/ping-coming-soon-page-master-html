@@ -21,7 +21,7 @@ body {
     container: body / inline-size;
     justify-items: center;
     margin: 0;
-    font-family: 'Libre Franklin';
+    font-family: 'Libre Franklin',sans-serif;
 }
 
 main {
